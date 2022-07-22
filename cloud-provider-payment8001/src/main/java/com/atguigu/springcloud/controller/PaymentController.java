@@ -2,7 +2,7 @@ package com.atguigu.springcloud.controller;
 
 import com.atguigu.springcloud.pojo.CommonResult;
 import com.atguigu.springcloud.pojo.Payment;
-import com.atguigu.springcloud.service.PaymentService;
+import com.atguigu.springcloud.feignclient.PaymentService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -70,6 +70,22 @@ public class PaymentController {
       log.info(instance.getServiceId() + "\t" + instance.getHost() + "\t" + instance.getPort() + "\t" + instance.getUri());
     }
     return this.discoveryClient;
+  }
+
+  @GetMapping("/lb")
+  public String getServerPort() {
+    return serverPort;
+  }
+
+  @GetMapping("/feign/timeout")
+  public String feignTimeout() {
+    // 睡眠3秒
+    try {
+      Thread.sleep(3000);
+    } catch (InterruptedException e) {
+      e.printStackTrace();
+    }
+    return "Hello~，Feign";
   }
 
 }

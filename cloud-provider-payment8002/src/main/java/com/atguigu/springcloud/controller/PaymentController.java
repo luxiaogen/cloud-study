@@ -2,7 +2,7 @@ package com.atguigu.springcloud.controller;
 
 import com.atguigu.springcloud.pojo.CommonResult;
 import com.atguigu.springcloud.pojo.Payment;
-import com.atguigu.springcloud.service.PaymentService;
+import com.atguigu.springcloud.feignclient.PaymentService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -49,6 +49,11 @@ public class PaymentController {
     } else {
       return new CommonResult<Payment>(444, "没有对应的记录，查询ID" + id);
     }
+  }
+
+  @GetMapping("/lb")
+  public String getServerPort() {
+    return serverPort;
   }
 
 }

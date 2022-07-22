@@ -1,0 +1,23 @@
+server:
+  port: 80
+
+#spring:
+#  application:
+#    name: cloud-consumer-hystrix-order
+
+eureka:
+  client:
+    register-with-eureka: false # 表示不向注册中心注册自己
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka/
+
+# 设置 feign 客户端超时时间(openfeign默认支持ribbon)
+#ribbon:
+#  # 指定是建立连接所用的时间，适用于网络状况正常的情况下，两端连接所用的时间
+#  ReadTimeout: 5000
+#  # 指的是建立连接后从费为其读取到可用资源所用的事件
+#  ConnectTimeout: 5000
+
+feign:
+  hystrix:
+    enabled: true # 开启对hystrix服务降级的支持
