@@ -1,0 +1,14 @@
+server:
+  port: 83
+
+spring:
+  application:
+    name: nacos-order-consumer
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+
+# 自定义属性 方便 restTemplate 调用接口
+server-url:
+  nacos-user-service: http://nacos-payment-provider

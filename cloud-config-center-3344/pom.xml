@@ -12,6 +12,11 @@
     <artifactId>cloud-config-center-3344</artifactId>
 
     <dependencies>
+        <!--SpringCloud bus + mq-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-bus-amqp</artifactId>
+        </dependency>
         <!--springcloud配置中心-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>

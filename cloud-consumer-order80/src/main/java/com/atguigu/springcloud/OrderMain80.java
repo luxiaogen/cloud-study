@@ -2,7 +2,6 @@ package com.atguigu.springcloud;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 /**
  * @author 陆小根
@@ -11,7 +10,7 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
  */
 
 @SpringBootApplication
-@EnableEurekaClient // 注册为客户端
+// @EnableEurekaClient // 注册为客户端
 //@RibbonClient(name = "CLOUD-PAYMENT-SERVICE", configuration = MySelfRule.class) // 自定义负载均衡规则 不能放在 ComponentScan下
 // 负载均衡算法：rest接口第几次请求数 % 服务器集群总数量 = 实际调用服务器位置下标，每次服务重启后rest接口计数从1开始。
 // 1 % 2 = 1 -> index = 1

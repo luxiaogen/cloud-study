@@ -88,4 +88,10 @@ public class PaymentController {
     return "Hello~，Feign";
   }
 
+
+  @GetMapping("/zipkin")
+  public String paymentZipkin() {
+    return "h1, i'am paymentzipkin server fall back, welcome to atguigu, ^_^";
+  }
+
 }

@@ -10,6 +10,12 @@ spring:
       name: config # 配置文件名称
       profile: dev # 读取后缀名称
       uri: http://localhost:3344 # 配置中心地址
+  # rabbitmq相关配置，因为15627是rabbitmq的web端口，而5672是服务端口
+  rabbitmq:
+    host: 47.102.216.104
+    port: 5672
+    username: luxiaogen
+    password: 123321
 
 # 服务注册到eureka地址
 eureka:
